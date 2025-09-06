@@ -46,3 +46,5 @@ build/
 ### Scala ###
 .bsp/
 /scatterplots/
+/correlation_heatmap.png
+/scatterplots.7z

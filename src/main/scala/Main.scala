@@ -6,6 +6,7 @@ import Analysis._
 import Utils._
 import Combinator._
 import org.apache.spark.sql._
+import CalculateWinRate._
 
 /** Custom sealed trait to model computation results */
 sealed trait Result[+A]
@@ -67,6 +68,7 @@ object Main {
         // Save visualizations
         saveCorrelationHeatmap(corrMatrix, statsDF.columns)
         buildScatterPlots(statsDF)
+        saveWinRateByRating(statsDF)
 
         // Tail recursive average calculation
         CalculateAverageTurns.tryCalculateAverageTurns(df) match {
